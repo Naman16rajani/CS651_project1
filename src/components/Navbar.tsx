@@ -1,23 +1,25 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, X, Eye, Brain } from 'lucide-react';
+import React, { useState } from 'react'; // Import React and useState for state management
+import { Link } from 'react-router-dom'; // Import Link for navigation without full page reloads
+import { Menu, X, Eye, Brain } from 'lucide-react'; // Import icons from Lucide React
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); // State to manage mobile menu toggle
 
   return (
-    <nav className="bg-white shadow-lg">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between h-16">
+    <nav className="bg-white shadow-lg"> {/* Navigation bar with a white background and shadow */}
+      <div className="max-w-7xl mx-auto px-4"> {/* Container to center the navbar */}
+        <div className="flex justify-between h-16"> {/* Flexbox to space out navbar items */}
+          
+          {/* Logo Section */}
           <div className="flex items-center">
-            <Link to="/" className="flex items-center">
-              <Eye className="h-8 w-8 text-indigo-600" />
-              <Brain className="h-8 w-8 text-purple-600 -ml-2" />
-              <span className="ml-2 text-xl font-bold">VisionAI Labs</span>
+            <Link to="/" className="flex items-center"> {/* Logo links to home */}
+              <Eye className="h-8 w-8 text-indigo-600" /> {/* Eye icon */}
+              <Brain className="h-8 w-8 text-purple-600 -ml-2" /> {/* Brain icon */}
+              <span className="ml-2 text-xl font-bold">VisionAI Labs</span> {/* Branding text */}
             </Link>
           </div>
 
-          {/* Desktop Menu */}
+          {/* Desktop Menu (Hidden on mobile) */}
           <div className="hidden md:flex items-center space-x-4">
             <Link to="/" className="text-gray-700 hover:text-indigo-600 px-3 py-2">Home</Link>
             <Link to="/about" className="text-gray-700 hover:text-indigo-600 px-3 py-2">About</Link>
@@ -30,22 +32,22 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
             <button
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() => setIsOpen(!isOpen)} // Toggle mobile menu state
               className="text-gray-700 hover:text-indigo-600"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />} {/* Show X when open, Menu when closed */}
             </button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu (Visible when isOpen is true) */}
         {isOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+            <div className="px-2 pt-2 pb-3 space-y-1"> {/* Spacing for mobile menu items */}
               <Link
                 to="/"
                 className="block px-3 py-2 text-gray-700 hover:text-indigo-600"
-                onClick={() => setIsOpen(false)}
+                onClick={() => setIsOpen(false)} // Close menu on click
               >
                 Home
               </Link>
