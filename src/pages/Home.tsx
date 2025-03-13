@@ -1,6 +1,6 @@
 import React from 'react';
-import { ArrowRight, Camera, Brain, Shield } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { ArrowRight, Camera, Brain, Shield } from 'lucide-react'; // Import icons
+import { Link } from 'react-router-dom'; // Import Link for navigation
 
 const Home = () => {
   return (
@@ -15,6 +15,7 @@ const Home = () => {
             <p className="text-xl mb-8">
               VisionAI Labs delivers cutting-edge computer vision solutions powered by advanced machine learning algorithms.
             </p>
+            {/* CTA Button */}
             <Link
               to="/contact"
               className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
@@ -29,6 +30,7 @@ const Home = () => {
       <div className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
+            {/* Feature 1: Object Detection */}
             <div className="text-center p-6">
               <Camera className="w-12 h-12 text-indigo-600 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-4">Advanced Object Detection</h3>
@@ -36,6 +38,7 @@ const Home = () => {
                 Real-time object detection and tracking for security and automation applications.
               </p>
             </div>
+            {/* Feature 2: Deep Learning */}
             <div className="text-center p-6">
               <Brain className="w-12 h-12 text-purple-600 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-4">Deep Learning Models</h3>
@@ -43,6 +46,7 @@ const Home = () => {
                 Custom-trained neural networks for specific industry applications.
               </p>
             </div>
+            {/* Feature 3: Privacy & Security */}
             <div className="text-center p-6">
               <Shield className="w-12 h-12 text-green-600 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-4">Privacy-First Approach</h3>
@@ -54,7 +58,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Floating Box */}
+      {/* Floating Box - Latest News */}
       <div className="floating-box">
         <h3 className="text-xl font-semibold mb-4">Latest News</h3>
         <div className="space-y-4">
@@ -73,4 +77,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Home; // Export Home component

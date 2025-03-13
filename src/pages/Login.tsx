@@ -2,11 +2,16 @@ import React, { useState } from 'react';
 import { User, Lock, Mail, UserPlus } from 'lucide-react';
 
 const Login = () => {
+  // State for toggling between login and create account form
   const [showCreateAccount, setShowCreateAccount] = useState(false);
+
+  // State for login form inputs
   const [loginData, setLoginData] = useState({
     username: '',
     password: '',
   });
+
+  // State for create account form inputs
   const [createAccountData, setCreateAccountData] = useState({
     name: '',
     email: '',
@@ -14,18 +19,21 @@ const Login = () => {
     password: '',
   });
 
+  // Handle login form submission
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Login:', loginData);
   };
 
+  // Handle create account form submission
   const handleCreateAccount = (e: React.FormEvent) => {
     e.preventDefault();
-    // Set the login form with the new account details
+    // Set login form with the newly created account credentials
     setLoginData({
       username: createAccountData.username,
       password: createAccountData.password,
     });
+    // Hide the create account form
     setShowCreateAccount(false);
   };
 
@@ -39,6 +47,7 @@ const Login = () => {
               <div className="bg-white rounded-lg shadow-lg p-8">
                 <h2 className="text-2xl font-bold mb-6 text-center">Sign In</h2>
                 <form onSubmit={handleLogin} className="space-y-4">
+                  {/* Username Input */}
                   <div>
                     <label className="block text-gray-700 mb-2">Username</label>
                     <div className="relative">
@@ -52,6 +61,8 @@ const Login = () => {
                       />
                     </div>
                   </div>
+
+                  {/* Password Input */}
                   <div>
                     <label className="block text-gray-700 mb-2">Password</label>
                     <div className="relative">
@@ -65,6 +76,8 @@ const Login = () => {
                       />
                     </div>
                   </div>
+
+                  {/* Sign In Button */}
                   <button
                     type="submit"
                     className="w-full bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition"
@@ -72,6 +85,8 @@ const Login = () => {
                     Sign In
                   </button>
                 </form>
+
+                {/* Show Create Account Button if not already visible */}
                 {!showCreateAccount && (
                   <button
                     onClick={() => setShowCreateAccount(true)}
@@ -90,6 +105,7 @@ const Login = () => {
                 <div className="bg-white rounded-lg shadow-lg p-8">
                   <h2 className="text-2xl font-bold mb-6 text-center">Create Account</h2>
                   <form onSubmit={handleCreateAccount} className="space-y-4">
+                    {/* Name Input */}
                     <div>
                       <label className="block text-gray-700 mb-2">Name</label>
                       <input
@@ -100,6 +116,8 @@ const Login = () => {
                         required
                       />
                     </div>
+
+                    {/* Email Input */}
                     <div>
                       <label className="block text-gray-700 mb-2">Email</label>
                       <div className="relative">
@@ -113,6 +131,8 @@ const Login = () => {
                         />
                       </div>
                     </div>
+
+                    {/* Username Input */}
                     <div>
                       <label className="block text-gray-700 mb-2">Username</label>
                       <div className="relative">
@@ -126,6 +146,8 @@ const Login = () => {
                         />
                       </div>
                     </div>
+
+                    {/* Password Input */}
                     <div>
                       <label className="block text-gray-700 mb-2">Password</label>
                       <div className="relative">
@@ -139,6 +161,8 @@ const Login = () => {
                         />
                       </div>
                     </div>
+
+                    {/* Create Account Button */}
                     <button
                       type="submit"
                       className="w-full bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition"
