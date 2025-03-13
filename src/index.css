@@ -1,37 +1,44 @@
+/* Import Bootstrap for predefined styles and components */
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
+/* Import Tailwind's base styles, component styles, and utility classes */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Floating box positioned to the right with padding and a subtle shadow */
 .floating-box {
   float: right;
   width: 300px;
   padding: 20px;
   margin: 20px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.9); /* Slight transparency for a softer look */
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a light shadow effect */
 }
 
+/* Hero section with a gradient background and white text */
 .hero-section {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 500px;
-  color: white;
+  color: white; /* Ensures text is readable on the gradient */
 }
 
+/* About card with a smooth hover effect */
 .about-card {
-  border: none;
-  transition: transform 0.3s ease;
+  border: none; /* Removes default border */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
 }
 
+/* Slight lift effect when hovering over the about card */
 .about-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px); /* Moves the card up slightly */
 }
 
+/* Contact form with padding, rounded corners, and a subtle shadow */
 .contact-form {
   background: white;
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
 }
